@@ -13,14 +13,14 @@ export class Server {
   public static async start() {
     console.log("Server started...");
 
-    CronService.createJob("*/5 * * * * *", () => {
-      // const url = "http://localhost:3000";
-      const url = "https://www.google.com";
-      new CheckServiceMultiple(
-        [fsLogRepository, monogLogRepository, postgresqlLogRepository],
-        () => console.log(`${url} is ok`),
-        (error) => console.log(error)
-      ).execute(url);
-    });
+    // CronService.createJob("*/5 * * * * *", () => {
+    //   // const url = "http://localhost:3000";
+    //   const url = "https://www.google.com";
+    //   new CheckServiceMultiple(
+    //     [fsLogRepository, monogLogRepository, postgresqlLogRepository],
+    //     () => console.log(`${url} is ok`),
+    //     (error) => console.log(error)
+    //   ).execute(url);
+    // });
   }
 }

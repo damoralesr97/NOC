@@ -6,13 +6,12 @@ interface ConnectionOptions {
 }
 
 export class MongoDatabase {
-  static async connect(options: ConnectionOptions) {
+  static async connect(options: ConnectionOptions): Promise<Boolean> {
     const { mongoUrl, dbName } = options;
     try {
       await mongoose.connect(mongoUrl, { dbName });
-      console.log("Mongo connected!");
+      return true;
     } catch (error) {
-      console.error("Mongo connection error");
       throw error;
     }
   }
